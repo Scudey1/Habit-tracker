@@ -1,0 +1,168 @@
+.register-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Press Start 2P', cursive; /* Пиксельный шрифт */
+}
+
+/* Фоновое изображение */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./public/Images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Контейнер формы */
+.register-form-container {
+  position: absolute;
+  top: 0;
+  right: 200px; /* Отступ от правого края */
+  width: 600px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Сама форма */
+.register-form {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 20px; /* Скругленные углы */
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  border: 4px solid #000;
+}
+
+.form-title {
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 0 #ddd;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  color: #555;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Пиксельные инпуты */
+.pixel-input {
+  width: 100%;
+  padding: 15px;
+  border: 3px solid #333;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.pixel-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.pixel-input::placeholder {
+  color: #999;
+  font-size: 10px;
+}
+
+/* Кнопка регистрации */
+.register-link {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #d822a1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 20px;
+  border: 3px solid #7a0266;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.register-link:hover {
+  background-color: #388E3C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 #1B5E20;
+}
+
+.register-link:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #1B5E20;
+}
+
+/* Ссылка "У меня уже есть дом" */
+.login-link-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-link {
+  color: #667eea;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.login-link:hover {
+  color: #5a67d8;
+  text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .register-form-container {
+    right: 20px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-form-container {
+    position: relative;
+    right: auto;
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    height: auto;
+  }
+  
+  .register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .background-image {
+    filter: brightness(0.7);
+  }
+}

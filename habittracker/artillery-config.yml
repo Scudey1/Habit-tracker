@@ -1,0 +1,28 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 10  #длительность фазы
+      arrivalRate: 10 # количество пользователей в секунду
+#scenarios:
+  #- flow:
+   #   - post:
+     #     url: "/api/login"
+       #   json:
+       #     username: "Julia"
+        #    password: "*12345678"
+scenarios:
+  - name: "Быстрая аутентификация"
+    flow:
+      - post:
+          url: "/api/login"
+          json:
+            username: "fastuser"
+            password: "simplepass"
+  
+  - name: "Медленная аутентификация"
+    flow:
+      - post:
+          url: "/api/login"
+          json:
+            username: "complex@email.com"
+            password: "VeryLongPassword123!@#"
